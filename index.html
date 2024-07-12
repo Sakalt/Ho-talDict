@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>簡単な辞書</title>
+    <style>
+        body {
+            font-family: 'hotlic', sans-serif;
+        }
+        .word-card {
+            border: 2px solid #00ccba;
+            background-color: #0077cc;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .noun {
+            color: #aa0000;
+        }
+        .adjective {
+            color: #00aa00;
+        }
+        .verb {
+            color: #00aaaa;
+        }
+        .proper-noun {
+            color: #aa00aa;
+        }
+        .suffix {
+            color: #aaaa00;
+        }
+    </style>
+</head>
+<body>
+    <h1>簡単な辞書</h1>
+    <div>
+        <label for="search">検索:</label>
+        <input type="text" id="search" placeholder="単語または発音を入力">
+        <button onclick="searchWord()">検索</button>
+    </div>
+    <div>
+        <label for="searchType">検索タイプ:</label>
+        <select id="searchType">
+            <option value="prefix">前方一致</option>
+            <option value="partial">部分一致</option>
+            <option value="exact">完全一致</option>
+            <option value="pronunciation">発音</option>
+        </select>
+    </div>
+    <div>
+        <p>単語数: <span id="wordCount">0</span></p>
+        <p>例文数: <span id="exampleCount">0</span></p>
+    </div>
+    <div id="dictionary"></div>
+
+    <script src="dictionary.js"></script>
+</body>
+</html>
